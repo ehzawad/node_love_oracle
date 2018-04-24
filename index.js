@@ -2,28 +2,49 @@ var http=require('http');
 var express=require('express');
 var app=express();
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(session({secret: "habib6093",rolling: true,resave: true,saveUninitialized: true,cookie:{username:'unknown',maxAge:null}}));
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.set('view engine','ejs');
 
 
 var db=require('./models/db');
-var login=require('./controllers/loginController');
-
-/*
-app.get("/",function(req,res){
-  
-     res.render('login');
-});*/
+var auth=require('./controllers/authController');
+var employee=require('./controllers/employeeController');
+var admin=require('./controllers/adminController');
 
 
 
-app.use(login);
 
-app.get('/test',function(req,res){
- res.render("test");
+
+app.get('/',function(req,res){
+    //res.send("welcome to home");
+    res.redirect('/auth/login');
 });
+
+
+app.use('/auth',auth);
+app.use('/employee',employee);
+app.use('/admin',admin);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 app.post('/login',function(req,res){

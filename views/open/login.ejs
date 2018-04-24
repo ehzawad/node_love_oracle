@@ -22,11 +22,13 @@
         <div class="panel panel-info">
             <div class="panel-heading"><h2>Login</h2></div>
             <div class="panel-body">
-                <form class="form-group" action="/login" method="post">
+                <form class="form-group" action="/auth/login" method="post">
+                    <label>Username</label>
                     <input type="text" class="form-control" placeholder="Username" name="username"><br>
+                    <label>Password</label>
                     <input type="password" class="form-control" placeholder="Password" name="password"><br>
                     <button class="btn btn-info" type="submit">Login</button>
-                    <button class="btn btn-info"><a href="registration" style="color:white;text-decoration: none;">Registration</a></button>
+                    <button class="btn btn-info"><a href="/auth/registration" style="color:white;text-decoration: none;">Registration</a></button>
                 </form>
 
 

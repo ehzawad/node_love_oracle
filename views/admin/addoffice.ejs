@@ -1,0 +1,30 @@
+<%include layouts/header.html%>
+
+<form method="post" action="/admin/addnewoffice">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Office Name</label>
+            <input type="text" class="form-control" placeholder="Enter Office Name" name="officename">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="text" class="form-control" placeholder="Email" name="email">
+            <label for="exampleInputEmail1">Phone no</label>
+            <input type="text" class="form-control" placeholder="Email" name="phone no">
+            <label for="exampleInputEmail1">Office type</label>
+            <select class="form-control" name="officetype">
+                    <option>Software</option>
+                    <option>Bank</option>
+                    <option>Government</option>
+                    <option>Other...</option>
+            </select><br>
+            <label for="exampleInputEmail1">Division</label>
+            <input type="text" class="form-control" placeholder="Division" name="address">
+            <label for="exampleInputEmail1">District</label>
+            <input type="text" class="form-control" placeholder="District" name="address">
+            <label for="exampleInputEmail1">Thana</label>
+            <input type="text" class="form-control" placeholder="Thana" name="address">
+       
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Office</button>
+    </form>
+
+<%include layouts/footer.html%>

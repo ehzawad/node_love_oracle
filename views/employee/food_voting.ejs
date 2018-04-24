@@ -1,0 +1,42 @@
+<%include layouts/header.html%>
+
+        <h1>Todays Food Menu</h1>
+                    <hr/>
+                        <h2>Food List</h2>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                <th style="text-align:center;" scope="col">#</th>
+                                <th style="text-align:center;" scope="col">Food Name</th>
+                                <th style="text-align:center;" scope="col">Total Vote</th>
+                                <th style="text-align:center;" scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(var i=0; i < foods.length; i++) { %>
+                                   <form action="/employee/vote" method="post">
+                                        <tr>
+                                            <th scope="row"><%=i+1%></th>
+                                            <td><%=foods[i][1]%></td>
+                                            <td><%=foods[i][2]%></td>
+                                            <input type="hidden" value="<%=foods[i][0]%>" name="foodrankid" />
+                                            <input type="hidden" value="<%=foods[i][3]%>" name="officeid" />
+                                            <td style="text-align:center;"> <button type="submit" class="btn btn-success">Vote</button> </td>
+                                        </tr>
+                                   </form>
+                                <% } %>
+                            </tbody>
+                        </table>
+
+                        <form action="/employee/addnewfood" method="post">
+                            <input type="text" placeholder="Food name" name="foodname">
+                            <input type="hidden" value="<%=officeid%>" name="officeid" />
+                            <button type="submit" class="btn btn-success">Add food</button>
+                        </form>
+                        
+                        
+
+
+
+
+<%include layouts/footer.html%>

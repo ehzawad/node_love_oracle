@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Admin Home</title>
+</head>
+<body>
+    <div class="container" >
+        <div style="min-height: 94vh">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8"><h1 class="text-center">Hello <%=username%></h1></div>
+                    <div class="col-xs-6 col-md-4"><img src="/defaultprofile.jpg" class="img-circle"  alt="your_image" style="max-width: 100px;max-height: 100px;float: right">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <div class="list-group" style="text-align:center;">
+                            <li class="list-group-item active" style="text-align:center;" disbled>Menu</li>
+                            <a href="/admin" class="list-group-item">Home</a>
+                            <a href="/admin/addnewoffice" class="list-group-item">Create Office</a>
+                            <a href="/admin/employeerequest" class="list-group-item">Employee Request List</a>
+                            <a href="/admin/orderhistory" class="list-group-item">Order History</a>
+                            <a href="/auth/logout" class="list-group-item">Logout</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-9 col-md-9">
